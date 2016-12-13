@@ -1,0 +1,16 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+ $conexion = mysql_connect("localhost", "root","");
+ mysql_database("peliculas",$conexion);
+$q = mysql_query("select * from  pelicula",$conexion);
+
+
+class cont_prueba extends CI_Controller {
+
+
+	public function index()
+	{
+		$this->load->view('vista',$q);
+	}
+}
+?>
